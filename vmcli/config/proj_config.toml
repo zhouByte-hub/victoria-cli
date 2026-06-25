@@ -1,0 +1,14 @@
+
+[log]
+path = "./logs"
+level = "info"
+
+[reqwest]
+victoria_metrics_export_path = "/api/v1/export"
+download_path = "vmcli"
+victoria_metrics_import_path = "/api/v1/import"
+global_timeout = 600
+connect_timeout = 300
+response_timeout = 120
+idle_timeout = 30
+max_idle = 5

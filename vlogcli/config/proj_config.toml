@@ -1,0 +1,13 @@
+[log]
+path = "./logs"
+level = "info"
+
+[reqwest]
+victoria_logs_export_path = "/select/logsql/query"
+download_path = "vlogcli"
+victoria_logs_import_path = "/insert/jsonline"
+global_timeout = 600
+connect_timeout = 300
+response_timeout = 120
+idle_timeout = 30
+max_idle = 0

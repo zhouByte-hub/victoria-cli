@@ -1,0 +1,12 @@
+// 获取这个时间段内所有的指标标签
+curl http://129.204.24.100:30428/api/v1/query_range -d 'query={__name__!=""}' -d 'start=2025-08-21T00:00:00' -d 'end=2025-08-21T00:00:01' -d 'limit=1' -d 'step=1s'
+
+// 导出指标信息
+curl http://129.204.24.100:30428/api/v1/export -d 'match[]=aggregator_discovery_aggregation_count_total' -d 'start=2025-08-21T00:00:00' -d 'end=2025-08-21T00:00:10'
+curl http://129.204.24.100:30428/api/v1/export -d 'match[]={__name__!=""}' -d 'start=2025-08-21T00:00:00' -d 'end=2025-08-21T00:00:10'
+
+
+// 导入
+curl -H 'Content-Type: application/json' \
+  -X POST http://129.204.24.100:30428/api/v1/import \
+  --data-binary '{"metric":{"__name__":"vm_import_test","job":"kubernetes-apiservers","instance":"10.168.1.130:6443"},"values":[4086],"timestamps":[1755734405441]}'

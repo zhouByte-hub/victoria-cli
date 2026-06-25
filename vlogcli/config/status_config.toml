@@ -1,0 +1,10 @@
+victoria_logs_path = "http://127.0.0.1:9428"
+update_time = "2025-09-18 17:56:31"
+
+[export]
+has_exception = false
+export_start_time = "2025-09-18T00:00:00Z"
+export_end_time = "2025-09-18T23:59:59Z"
+
+[import]
+has_exception = false
